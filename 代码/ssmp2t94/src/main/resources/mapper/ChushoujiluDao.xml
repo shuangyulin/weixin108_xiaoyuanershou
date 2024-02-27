@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChushoujiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChushoujiluEntity" id="chushoujiluMap">
+        <result property="chushoudanhao" column="chushoudanhao"/>
+        <result property="shangpinbianhao" column="shangpinbianhao"/>
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinleibie" column="shangpinleibie"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shangpinguige" column="shangpinguige"/>
+        <result property="shangpinpinpai" column="shangpinpinpai"/>
+        <result property="xinjiuchengdu" column="xinjiuchengdu"/>
+        <result property="chushoudanjia" column="chushoudanjia"/>
+        <result property="chushoushuliang" column="chushoushuliang"/>
+        <result property="chushouzongjia" column="chushouzongjia"/>
+        <result property="chushoushijian" column="chushoushijian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChushoujiluVO" >
+		SELECT * FROM chushoujilu  chushoujilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChushoujiluVO" >
+		SELECT  chushoujilu.* FROM chushoujilu  chushoujilu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChushoujiluView" >
+
+		SELECT  chushoujilu.* FROM chushoujilu  chushoujilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChushoujiluView" >
+		SELECT * FROM chushoujilu  chushoujilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
